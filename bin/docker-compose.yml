@@ -1,0 +1,77 @@
+version: '3'
+services:
+  mongo.docker:
+    image: mongo
+
+  scapig-api-definition.docker:
+    build: ../../scapig-api-definition
+    ports:
+     - "7000:7000"
+
+  scapig-scope.docker:
+    build: ../../scapig-scope
+    ports:
+     - "7010:7010"
+
+  scapig-application.docker:
+    build: ../../scapig-application
+    ports:
+     - "7020:7020"
+
+  scapig-delegated-authority.docker:
+    build: ../../scapig-delegated-authority
+    ports:
+     - "7030:7030"
+
+  scapig-oauth.docker:
+    build: ../../scapig-oauth
+    ports:
+     - "7040:7040"
+
+  scapig-oauth-login.docker:
+    build: ../../scapig-oauth-login
+    ports:
+     - "7050:7050"
+
+  scapig-requested-authority.docker:
+    build: ../../scapig-requested-authority
+    ports:
+     - "7060:7060"
+
+  scapig-developer.docker:
+    build: ../../scapig-developer
+    ports:
+     - "8000:8000"
+
+  scapig-developer-hub.docker:
+    build: ../../scapig-developer-hub
+    ports:
+     - "8010:8010"
+
+  scapig-gateway.docker:
+    build: ../../scapig-gateway
+    ports:
+     - "8030:8030"
+
+  scapig-publisher.docker:
+    build: ../../scapig-publisher
+    ports:
+     - "8040:8040"
+
+  scapig-hello-world-api.docker:
+    build: ../../scapig-hello-world-api
+    ports:
+     - "9000:9000"
+
+  scapig-nginx-documentation.docker:
+    build: ../nginx/documentation
+    ports:
+     - "80:80"
+
+  scapig-nginx-gateway.docker:
+    build: ../nginx/gateway
+    ports:
+     - "8080:8080"
+
+volumes:
+  logvolume01: {}
