@@ -61,7 +61,7 @@ services:
   scapig-hello-world-api.docker:
     build: ../../scapig-hello-world-api
     ports:
-     - "9000:9000"
+     - "9990:9990"
 
   scapig-nginx-documentation.docker:
     build: ../nginx/documentation
