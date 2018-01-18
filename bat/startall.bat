@@ -1,6 +1,6 @@
 @echo off
 
-REM environment variable TAPI_REPOSITORY must be set
+REM environment variable SCAPIG_REPOSITORY must be set
 
 (
   setlocal EnableDelayedExpansion
@@ -14,8 +14,8 @@ REM environment variable TAPI_REPOSITORY must be set
   (start.bat scapig-delegated-authority 7030)
   echo starting scapig-oauth
   (start.bat scapig-oauth 7040)
-  echo starting scapig-oauth-login
-  (start.bat scapig-oauth-login 7050)
+  echo starting login-example
+  (start.bat login-example 7050)
   echo starting scapig-requested-authority
   (start.bat scapig-requested-authority 7060)
   echo starting scapig-developer
@@ -26,7 +26,7 @@ REM environment variable TAPI_REPOSITORY must be set
   (start.bat scapig-gateway 8030)
   echo starting scapig-publisher
   (start.bat scapig-publisher 8040)
-  echo starting scapig-hello-world-api
-  (start.bat scapig-hello-world-api 8080)
+  echo starting api-example
+  (start.bat api-example 8080)
   endlocal
 )

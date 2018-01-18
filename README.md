@@ -1,5 +1,9 @@
 ## scapig-scripts
 
+### Pre-requirement
+
+The environment variable SCAPIG_REPOSITORY must be set to the location of the local repository.
+
 ### Build NGINX
 ``
 cd bin

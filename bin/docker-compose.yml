@@ -4,72 +4,72 @@ services:
     image: mongo
 
   scapig-api-definition.docker:
-    build: ../../scapig-api-definition
+    build: $SCAPIG_REPOSITORY/scapig-api-definition
     ports:
      - "7000:7000"
 
   scapig-scope.docker:
-    build: ../../scapig-scope
+    build: $SCAPIG_REPOSITORY/scapig-scope
     ports:
      - "7010:7010"
 
   scapig-application.docker:
-    build: ../../scapig-application
+    build: $SCAPIG_REPOSITORY/scapig-application
     ports:
      - "7020:7020"
 
   scapig-delegated-authority.docker:
-    build: ../../scapig-delegated-authority
+    build: $SCAPIG_REPOSITORY/scapig-delegated-authority
     ports:
      - "7030:7030"
 
   scapig-oauth.docker:
-    build: ../../scapig-oauth
+    build: $SCAPIG_REPOSITORY/scapig-oauth
     ports:
      - "7040:7040"
 
-  scapig-oauth-login.docker:
-    build: ../../scapig-oauth-login
+  login-example.docker:
+    build: $SCAPIG_REPOSITORY/login-example
     ports:
      - "7050:7050"
 
   scapig-requested-authority.docker:
-    build: ../../scapig-requested-authority
+    build: $SCAPIG_REPOSITORY/scapig-requested-authority
     ports:
      - "7060:7060"
 
   scapig-developer.docker:
-    build: ../../scapig-developer
+    build: $SCAPIG_REPOSITORY/scapig-developer
     ports:
      - "8000:8000"
 
   scapig-developer-hub.docker:
-    build: ../../scapig-developer-hub
+    build: $SCAPIG_REPOSITORY/scapig-developer-hub
     ports:
      - "8010:8010"
 
   scapig-gateway.docker:
-    build: ../../scapig-gateway
+    build: $SCAPIG_REPOSITORY/scapig-gateway
     ports:
      - "8030:8030"
 
   scapig-publisher.docker:
-    build: ../../scapig-publisher
+    build: $SCAPIG_REPOSITORY/scapig-publisher
     ports:
      - "8040:8040"
 
-  scapig-hello-world-api.docker:
-    build: ../../scapig-hello-world-api
+  api-example.docker:
+    build: $SCAPIG_REPOSITORY/api-example
     ports:
      - "9990:9990"
 
   scapig-nginx-documentation.docker:
-    build: ../nginx/documentation
+    build: $SCAPIG_REPOSITORY/scripts/nginx/documentation
     ports:
      - "80:80"
 
   scapig-nginx-gateway.docker:
-    build: ../nginx/gateway
+    build: $SCAPIG_REPOSITORY/scripts/nginx/gateway
     ports:
      - "8080:8080"
 

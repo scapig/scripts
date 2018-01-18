@@ -12,8 +12,8 @@
   (stop.bat scapig-delegated-authority)
   echo stopping scapig-oauth
   (stop.bat scapig-oauth)
-  echo stopping scapig-oauth-login
-  (stop.bat scapig-oauth-login)
+  echo stopping login-example
+  (stop.bat login-example)
   echo stopping scapig-requested-authority
   (stop.bat scapig-requested-authority)
   echo stopping scapig-developer
@@ -24,7 +24,7 @@
   (stop.bat scapig-gateway)
   echo stopping scapig-publisher
   (stop.bat scapig-publisher)
-  echo stopping scapig-hello-world-api
-  (stop.bat scapig-hello-world-api)
+  echo stopping api-example
+  (stop.bat api-example)
   endlocal
 )

@@ -1,6 +1,6 @@
 @echo off
 
-REM environment variable TAPI_REPOSITORY must be set
+REM environment variable SCAPIG_REPOSITORY must be set
 
 set PROJECT_NAME=%1
 set PID_PATH=C:\temp\stage_%PROJECT_NAME%\RUNNING_PID
