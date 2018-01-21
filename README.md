@@ -8,8 +8,8 @@ The environment variable SCAPIG_REPOSITORY must be set to the location of the lo
 #### Publishing
 ``
 cd nginx
-docker build -t lb-developer-hub developer-hub
-docker build -t lb-gateway gateway
+docker build -t lb-developer-hub lb-developer-hub
+docker build -t lb-gateway lb-gateway
 docker tag lb-developer-hub scapig/lb-developer-hub:VERSION
 docker tag lb-gateway scapig/lb-gateway:VERSION
 docker login
@@ -19,8 +19,8 @@ docker push scapig/lb-gateway:VERSION
 
 #### Docker compose locally
 ``
-docker-compose build lb-gateway.docker
-docker-compose build lb-developer-hub.docker
+docker-compose build lb-gateway
+docker-compose build lb-developer-hub
 ``
 
 ### Build Scapig
@@ -32,4 +32,10 @@ bin/build-all.sh
 ``
 bin/start.sh
 bin/stop.sh
+``
+
+### Start Scapig
+``
+curl https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml --output scapig.yml
+docker stack deploy --compose-file scapig.yml scapig
 ``
