@@ -63,12 +63,12 @@ services:
     ports:
      - "9990:9990"
 
-  scapig-nginx-documentation.docker:
-    build: $SCAPIG_REPOSITORY/scripts/nginx/documentation
+  lb-developer-hub.docker:
+    build: $SCAPIG_REPOSITORY/scripts/nginx/developer-hub
     ports:
      - "80:80"
 
-  scapig-nginx-gateway.docker:
+  lb-gateway.docker:
     build: $SCAPIG_REPOSITORY/scripts/nginx/gateway
     ports:
      - "8080:8080"

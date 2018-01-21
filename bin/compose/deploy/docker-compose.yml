@@ -1,0 +1,77 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+
+  scapig-api-definition:
+    image: scapig/scapig-api-definition:0.1
+    ports:
+     - "7000:7000"
+
+  scapig-scope:
+    image: scapig/scapig-scope:0.1
+    ports:
+     - "7010:7010"
+
+  scapig-application:
+    image: scapig/scapig-application:0.1
+    ports:
+     - "7020:7020"
+
+  scapig-delegated-authority:
+    image: scapig/scapig-delegated-authority:0.1
+    ports:
+     - "7030:7030"
+
+  scapig-oauth:
+    image: scapig/scapig-oauth:0.1
+    ports:
+     - "7040:7040"
+
+  login-example:
+    image: scapig/login-example:0.1
+    ports:
+     - "7050:7050"
+
+  scapig-requested-authority:
+    image: scapig/scapig-requested-authority:0.1
+    ports:
+     - "7060:7060"
+
+  scapig-developer:
+    image: scapig/scapig-developer:0.1
+    ports:
+     - "8000:8000"
+
+  scapig-developer-hub:
+    image: scapig/scapig-developer-hub:0.1
+    ports:
+     - "8010:8010"
+
+  scapig-gateway:
+    image: scapig/scapig-gateway:0.1
+    ports:
+     - "8030:8030"
+
+  scapig-publisher:
+    image: scapig/scapig-publisher:0.1
+    ports:
+     - "8040:8040"
+
+  api-example:
+    image: scapig/api-example:0.1
+    ports:
+     - "9990:9990"
+
+  lb-developer-hub:
+    image: scapig/lb-developer-hub:0.1
+    ports:
+     - "80:80"
+
+  lb-gateway:
+    image: scapig/lb-gateway:0.1
+    ports:
+     - "8080:8080"
+
+volumes:
+  logvolume01: {}

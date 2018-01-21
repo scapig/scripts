@@ -4,11 +4,23 @@
 
 The environment variable SCAPIG_REPOSITORY must be set to the location of the local repository.
 
-### Build NGINX
+### NGINX
+#### Publishing
 ``
-cd bin
-docker-compose build scapig-nginx-gateway.docker
-docker-compose build scapig-nginx-documentation.docker
+cd nginx
+docker build -t lb-developer-hub developer-hub
+docker build -t lb-gateway gateway
+docker tag lb-developer-hub scapig/lb-developer-hub:VERSION
+docker tag lb-gateway scapig/lb-gateway:VERSION
+docker login
+docker push scapig/lb-developer-hub:VERSION
+docker push scapig/lb-gateway:VERSION
+``
+
+#### Docker compose locally
+``
+docker-compose build lb-gateway.docker
+docker-compose build lb-developer-hub.docker
 ``
 
 ### Build Scapig
