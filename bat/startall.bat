@@ -5,28 +5,28 @@ REM environment variable SCAPIG_REPOSITORY must be set
 (
   setlocal EnableDelayedExpansion
   echo starting scapig-api-definition
-  (start.bat scapig-api-definition 7000)
+  (start.bat scapig-api-definition 9010)
   echo starting scapig-scope
-  (start.bat scapig-scope 7010)
+  (start.bat scapig-scope 9011)
   echo starting scapig-application
-  (start.bat scapig-application 7020)
+  (start.bat scapig-application 9012)
   echo starting scapig-delegated-authority
-  (start.bat scapig-delegated-authority 7030)
-  echo starting scapig-oauth
-  (start.bat scapig-oauth 7040)
-  echo starting login-example
-  (start.bat login-example 7050)
+  (start.bat scapig-delegated-authority 9013)
   echo starting scapig-requested-authority
-  (start.bat scapig-requested-authority 7060)
+  (start.bat scapig-requested-authority 9014)
+  echo starting scapig-oauth
+  (start.bat scapig-oauth 9015)
   echo starting scapig-developer
-  (start.bat scapig-developer 8000)
+  (start.bat scapig-developer 9016)
   echo starting scapig-developer-hub
-  (start.bat scapig-developer-hub 8010)
+  (start.bat scapig-developer-hub 9017)
   echo starting scapig-gateway
-  (start.bat scapig-gateway 8030)
+  (start.bat scapig-gateway 9018)
   echo starting scapig-publisher
-  (start.bat scapig-publisher 8040)
+  (start.bat scapig-publisher 9019)
   echo starting api-example
-  (start.bat api-example 8080)
+  (start.bat api-example 9021)
+  echo starting login-example
+  (start.bat login-example 9040)
   endlocal
 )

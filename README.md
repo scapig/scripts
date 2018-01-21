@@ -28,7 +28,7 @@ docker-compose build lb-developer-hub
 bin/build-all.sh
 ``
 
-### Start / Stop Scapig
+
 ``
 bin/start.sh
 bin/stop.sh
@@ -36,6 +36,12 @@ bin/stop.sh
 
 ### Start Scapig
 ``
+docker swarm init
 curl https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml --output scapig.yml
 docker stack deploy --compose-file scapig.yml scapig
+``
+
+### Start Web
+``
+docker run -p9050:9050 -d scapig/web:0.1
 ``

@@ -4,64 +4,59 @@ mongo:
 scapig-api-definition:
   image: scapig/scapig-api-definition
   ports:
-   - "7000:7000"
+   - "9010:9010"
   links:
    - mongo
 
 scapig-scope:
   image: scapig/scapig-scope
   ports:
-   - "7010:7010"
+   - "9011:9011"
   links:
    - mongo
 
 scapig-application:
   image: scapig/scapig-application
   ports:
-   - "7020:7020"
+   - "9012:9012"
   links:
    - mongo
 
 scapig-delegated-authority:
   image: scapig/scapig-delegated-authority
   ports:
-   - "7030:7030"
+   - "9013:9013"
+  links:
+   - mongo
+
+scapig-requested-authority:
+  image: scapig/scapig-requested-authority
+  ports:
+   - "9014:9014"
   links:
    - mongo
 
 scapig-oauth:
   image: scapig/scapig-oauth
   ports:
-   - "7040:7040"
+   - "9015:9015"
   links:
    - scapig-application
    - scapig-delegated-authority
    - scapig-requested-authority
    - scapig-scope
 
-login-example:
-  image: scapig/login-example
-  ports:
-   - "7050:7050"
-
-scapig-requested-authority:
-  image: scapig/scapig-requested-authority
-  ports:
-   - "7060:7060"
-  links:
-   - mongo
-
 scapig-developer:
   image: scapig/scapig-developer
   ports:
-   - "8000:8000"
+   - "9016:9016"
   links:
    - mongo
 
 scapig-developer-hub:
   image: scapig/scapig-developer-hub
   ports:
-   - "8010:8010"
+   - "9017:9017"
   links:
    - scapig-api-definition
    - scapig-application
@@ -71,7 +66,7 @@ scapig-developer-hub:
 scapig-gateway:
   image: scapig/scapig-gateway
   ports:
-   - "8030:8030"
+   - "9018:9018"
   links:
    - mongo
    - scapig-api-definition
@@ -82,28 +77,33 @@ scapig-gateway:
 scapig-publisher:
   image: scapig/scapig-publisher
   ports:
-   - "8040:8040"
+   - "9019:9019"
   links:
    - mongo
    - scapig-api-definition
    - scapig-scope
 
-api-example:
-  image: scapig/api-example
-  ports:
-   - "9990:9990"
-
 lb-developer-hub:
   image: scapig/lb-developer-hub
   ports:
-   - "80:80"
+   - "9020:9020"
   links:
    - scapig-developer-hub
+
+api-example:
+  image: scapig/api-example
+  ports:
+   - "9021:9021"
 
 lb-gateway:
   image: scapig/lb-gateway
   ports:
-   - "8080:8080"
+   - "9030:9030"
   links:
    - scapig-oauth
    - scapig-gateway
+
+login-example:
+  image: scapig/login-example
+  ports:
+   - "9040:9040"

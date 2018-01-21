@@ -6,72 +6,72 @@ services:
   scapig-api-definition:
     image: scapig/scapig-api-definition:0.1
     ports:
-     - "7000:7000"
+     - "9010:9010"
 
   scapig-scope:
     image: scapig/scapig-scope:0.1
     ports:
-     - "7010:7010"
+     - "9011:9011"
 
   scapig-application:
     image: scapig/scapig-application:0.1
     ports:
-     - "7020:7020"
+     - "9012:9012"
 
   scapig-delegated-authority:
     image: scapig/scapig-delegated-authority:0.1
     ports:
-     - "7030:7030"
-
-  scapig-oauth:
-    image: scapig/scapig-oauth:0.1
-    ports:
-     - "7040:7040"
-
-  login-example:
-    image: scapig/login-example:0.1
-    ports:
-     - "7050:7050"
+     - "9013:9013"
 
   scapig-requested-authority:
     image: scapig/scapig-requested-authority:0.1
     ports:
-     - "7060:7060"
+     - "9014:9014"
+
+  scapig-oauth:
+    image: scapig/scapig-oauth:0.1
+    ports:
+     - "9015:9015"
 
   scapig-developer:
     image: scapig/scapig-developer:0.1
     ports:
-     - "8000:8000"
+     - "9016:9016"
 
   scapig-developer-hub:
     image: scapig/scapig-developer-hub:0.1
     ports:
-     - "8010:8010"
+     - "9017:9017"
 
   scapig-gateway:
     image: scapig/scapig-gateway:0.1
     ports:
-     - "8030:8030"
+     - "9018:9018"
 
   scapig-publisher:
     image: scapig/scapig-publisher:0.1
     ports:
-     - "8040:8040"
-
-  api-example:
-    image: scapig/api-example:0.1
-    ports:
-     - "9990:9990"
+     - "9019:9019"
 
   lb-developer-hub:
     image: scapig/lb-developer-hub:0.1
     ports:
-     - "80:80"
+     - "9020:9020"
+
+  api-example:
+    image: scapig/api-example:0.1
+    ports:
+     - "9021:9021"
 
   lb-gateway:
     image: scapig/lb-gateway:0.1
     ports:
-     - "8080:8080"
+     - "9030:9030"
+
+  login-example:
+    image: scapig/login-example:0.1
+    ports:
+     - "9040:9040"
 
 volumes:
   logvolume01: {}
