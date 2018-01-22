@@ -4,74 +4,116 @@ services:
     image: mongo
 
   scapig-api-definition:
-    image: scapig/scapig-api-definition:0.1
+    image: scapig/scapig-api-definition
     ports:
-     - "9010:9010"
+      - target: 9010
+        published: 9010
+        protocol: tcp
+        mode: host
 
   scapig-scope:
-    image: scapig/scapig-scope:0.1
+    image: scapig/scapig-scope
     ports:
-     - "9011:9011"
+      - target: 9011
+        published: 9011
+        protocol: tcp
+        mode: host
 
   scapig-application:
-    image: scapig/scapig-application:0.1
+    image: scapig/scapig-application
     ports:
-     - "9012:9012"
+      - target: 9012
+        published: 9012
+        protocol: tcp
+        mode: host
 
   scapig-delegated-authority:
-    image: scapig/scapig-delegated-authority:0.1
+    image: scapig/scapig-delegated-authority
     ports:
-     - "9013:9013"
+      - target: 9013
+        published: 9013
+        protocol: tcp
+        mode: host
 
   scapig-requested-authority:
-    image: scapig/scapig-requested-authority:0.1
+    image: scapig/scapig-requested-authority
     ports:
-     - "9014:9014"
+      - target: 9014
+        published: 9014
+        protocol: tcp
+        mode: host
 
   scapig-oauth:
-    image: scapig/scapig-oauth:0.1
+    image: scapig/scapig-oauth
     ports:
-     - "9015:9015"
+      - target: 9015
+        published: 9015
+        protocol: tcp
+        mode: host
 
   scapig-developer:
-    image: scapig/scapig-developer:0.1
+    image: scapig/scapig-developer
     ports:
-     - "9016:9016"
+      - target: 9016
+        published: 9016
+        protocol: tcp
+        mode: host
 
   scapig-developer-hub:
-    image: scapig/scapig-developer-hub:0.1
+    image: scapig/scapig-developer-hub
     ports:
-     - "9017:9017"
+      - target: 9017
+        published: 9017
+        protocol: tcp
+        mode: host
 
   scapig-gateway:
-    image: scapig/scapig-gateway:0.1
+    image: scapig/scapig-gateway
     ports:
-     - "9018:9018"
+      - target: 9018
+        published: 9018
+        protocol: tcp
+        mode: host
 
   scapig-publisher:
-    image: scapig/scapig-publisher:0.1
+    image: scapig/scapig-publisher
     ports:
-     - "9019:9019"
+      - target: 9019
+        published: 9019
+        protocol: tcp
+        mode: host
 
   lb-developer-hub:
-    image: scapig/lb-developer-hub:0.1
+    image: scapig/lb-developer-hub
     ports:
-     - "9020:9020"
+      - target: 9020
+        published: 9020
+        protocol: tcp
+        mode: host
 
   api-example:
-    image: scapig/api-example:0.1
+    image: scapig/api-example
     ports:
-     - "9021:9021"
+      - target: 9021
+        published: 9021
+        protocol: tcp
+        mode: host
 
   lb-gateway:
-    image: scapig/lb-gateway:0.1
+    image: scapig/lb-gateway
     ports:
-     - "9030:9030"
+      - target: 9030
+        published: 9030
+        protocol: tcp
+        mode: host
 
   login-example:
-    image: scapig/login-example:0.1
+    image: scapig/login-example
     ports:
-     - "9040:9040"
+      - target: 9040
+        published: 9040
+        protocol: tcp
+        mode: host
 
 volumes:
   logvolume01: {}
