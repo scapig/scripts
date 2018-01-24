@@ -7,71 +7,183 @@ services:
     build: $SCAPIG_REPOSITORY/scapig-api-definition
     ports:
      - "9010:9010"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-scope:
     build: $SCAPIG_REPOSITORY/scapig-scope
     ports:
      - "9011:9011"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-application:
     build: $SCAPIG_REPOSITORY/scapig-application
     ports:
      - "9012:9012"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-delegated-authority:
     build: $SCAPIG_REPOSITORY/scapig-delegated-authority
     ports:
      - "9013:9013"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-requested-authority:
     build: $SCAPIG_REPOSITORY/scapig-requested-authority
     ports:
      - "9014:9014"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-oauth:
     build: $SCAPIG_REPOSITORY/scapig-oauth
     ports:
      - "9015:9015"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-developer:
     build: $SCAPIG_REPOSITORY/scapig-developer
     ports:
      - "9016:9016"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-developer-hub:
     build: $SCAPIG_REPOSITORY/scapig-developer-hub
     ports:
      - "9017:9017"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-gateway:
     build: $SCAPIG_REPOSITORY/scapig-gateway
     ports:
      - "9018:9018"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   scapig-publisher:
     build: $SCAPIG_REPOSITORY/scapig-publisher
     ports:
      - "9019:9019"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   lb-developer-hub:
     build: $SCAPIG_REPOSITORY/scripts/nginx/lb-developer-hub
     ports:
      - "9020:9020"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   api-example:
     build: $SCAPIG_REPOSITORY/api-example
     ports:
      - "9021:9021"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   lb-gateway:
     build: $SCAPIG_REPOSITORY/scripts/nginx/lb-gateway
     ports:
      - "9030:9030"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
   login-example:
     build: $SCAPIG_REPOSITORY/login-example
     ports:
      - "9040:9040"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
 
 volumes:
   logvolume01: {}

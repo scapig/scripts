@@ -37,8 +37,8 @@ bin/stop.sh
 ### Start Scapig
 ``
 docker swarm init
-curl https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml --output scapig.yml
-docker stack deploy --compose-file scapig.yml scapig
+curl https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml --output docker-compose.yml
+docker stack deploy --compose-file docker-compose.yml scapig
 ``
 
 ### Start Web
