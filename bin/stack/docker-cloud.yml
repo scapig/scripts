@@ -56,7 +56,7 @@ scapig-developer:
 scapig-developer-hub:
   image: scapig/scapig-developer-hub
   ports:
-   - "9017:9017"
+   - "9020:9020"
   links:
    - scapig-api-definition
    - scapig-application
@@ -82,13 +82,6 @@ scapig-publisher:
    - mongo
    - scapig-api-definition
    - scapig-scope
-
-lb-developer-hub:
-  image: scapig/lb-developer-hub
-  ports:
-   - "9020:9020"
-  links:
-   - scapig-developer-hub
 
 api-example:
   image: scapig/api-example

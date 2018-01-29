@@ -126,8 +126,8 @@ services:
   scapig-developer-hub:
     image: scapig/scapig-developer-hub
     ports:
-      - target: 9017
-        published: 9017
+      - target: 9020
+        published: 9020
         protocol: tcp
         mode: host
     deploy:
@@ -160,22 +160,6 @@ services:
     ports:
       - target: 9019
         published: 9019
-        protocol: tcp
-        mode: host
-    deploy:
-      resources:
-        limits:
-          cpus: '0.20'
-          memory: 200M
-        reservations:
-          cpus: '0.01'
-          memory: 50M
-
-  lb-developer-hub:
-    image: scapig/lb-developer-hub
-    ports:
-      - target: 9020
-        published: 9020
         protocol: tcp
         mode: host
     deploy:

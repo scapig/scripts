@@ -19,7 +19,7 @@ REM environment variable SCAPIG_REPOSITORY must be set
   echo starting scapig-developer
   (start.bat scapig-developer 9016)
   echo starting scapig-developer-hub
-  (start.bat scapig-developer-hub 9017)
+  (start.bat scapig-developer-hub 9020)
   echo starting scapig-gateway
   (start.bat scapig-gateway 9018)
   echo starting scapig-publisher

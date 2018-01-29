@@ -97,7 +97,7 @@ services:
   scapig-developer-hub:
     build: $SCAPIG_REPOSITORY/scapig-developer-hub
     ports:
-     - "9017:9017"
+     - "9020:9020"
     deploy:
       resources:
         limits:
@@ -124,19 +124,6 @@ services:
     build: $SCAPIG_REPOSITORY/scapig-publisher
     ports:
      - "9019:9019"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.10'
-          memory: 100M
-        reservations:
-          cpus: '0.01'
-          memory: 50M
-
-  lb-developer-hub:
-    build: $SCAPIG_REPOSITORY/scripts/nginx/lb-developer-hub
-    ports:
-     - "9020:9020"
     deploy:
       resources:
         limits:

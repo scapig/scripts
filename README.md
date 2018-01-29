@@ -4,16 +4,21 @@
 
 The environment variable SCAPIG_REPOSITORY must be set to the location of the local repository.
 
+#### Memory Usage
+If `docker info` returns "WARNING: No swap limit support", you can enable the memory usage limit with the following:
+``
+In /etc/default/grub, add or edit:
+GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
+sudo update-grub
+``
+
 ### NGINX
 #### Publishing
 ``
 cd nginx
-docker build -t lb-developer-hub lb-developer-hub
 docker build -t lb-gateway lb-gateway
-docker tag lb-developer-hub scapig/lb-developer-hub
 docker tag lb-gateway scapig/lb-gateway
 docker login
-docker push scapig/lb-developer-hub
 docker push scapig/lb-gateway
 ``
 
@@ -43,5 +48,5 @@ docker stack deploy --compose-file docker-compose.yml scapig
 
 ### Start Web
 ``
-docker run -p9050:9050 -d scapig/web
+docker run -p9050:9050 -d -m128m scapig/web
 ``
