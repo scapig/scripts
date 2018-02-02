@@ -1,0 +1,225 @@
+version: '3.4'
+services:
+  mongo:
+    image: mongo
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-api-definition:
+    image: scapig/scapig-api-definition
+    ports:
+      - target: 9010
+        published: 9010
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-scope:
+    image: scapig/scapig-scope
+    ports:
+      - target: 9011
+        published: 9011
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-application:
+    image: scapig/scapig-application
+    ports:
+      - target: 9012
+        published: 9012
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-delegated-authority:
+    image: scapig/scapig-delegated-authority
+    ports:
+      - target: 9013
+        published: 9013
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-requested-authority:
+    image: scapig/scapig-requested-authority
+    ports:
+      - target: 9014
+        published: 9014
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-oauth:
+    image: scapig/scapig-oauth
+    ports:
+      - target: 9015
+        published: 9015
+        protocol: tcp
+        mode: host
+    environment:
+      - environment=Production
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-developer:
+    image: scapig/scapig-developer
+    ports:
+      - target: 9016
+        published: 9016
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-developer-hub:
+    image: scapig/scapig-developer-hub
+    ports:
+      - target: 9020
+        published: 9020
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-gateway:
+    image: scapig/scapig-gateway
+    ports:
+      - target: 9018
+        published: 9018
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  scapig-publisher:
+    image: scapig/scapig-publisher
+    ports:
+      - target: 9019
+        published: 9019
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  api-example:
+    image: scapig/api-example
+    ports:
+      - target: 9021
+        published: 9021
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  lb-gateway:
+    image: scapig/lb-gateway
+    ports:
+      - target: 9030
+        published: 9030
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+  login-example:
+    image: scapig/login-example
+    ports:
+      - target: 9040
+        published: 9040
+        protocol: tcp
+        mode: host
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M
+        reservations:
+          cpus: '0.01'
+          memory: 50M
+
+volumes:
+  logvolume01: {}

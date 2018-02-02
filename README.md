@@ -39,10 +39,16 @@ bin/start.sh
 bin/stop.sh
 ``
 
-### Start Scapig
+### Start Scapig in Dev Environment
 ``
 docker swarm init
-curl https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml --output docker-compose.yml
+docker stack deploy --compose-file deploy/dev-docker-compose.yml scapig
+``
+
+### Start Scapig in Production Environment
+``
+docker swarm init
+curl https://raw.githubusercontent.com/scapig/scripts/master/prod-docker-compose.yml --output docker-compose.yml
 docker stack deploy --compose-file docker-compose.yml scapig
 ``
 

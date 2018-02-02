@@ -98,6 +98,8 @@ services:
         published: 9015
         protocol: tcp
         mode: host
+    environment:
+      - environment=Development
     deploy:
       resources:
         limits:
