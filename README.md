@@ -1,5 +1,7 @@
 ## scapig-scripts
 
+This is the repository containing all the scripts required for the API Manager Scapig (http://www.scapig.com)
+
 ### Pre-requirement
 
 The environment variable SCAPIG_REPOSITORY must be set to the location of the local repository.
@@ -38,6 +40,11 @@ bin/build-all.sh
 bin/start.sh
 bin/stop.sh
 ``
+
+### Pull the latest version
+```
+docker-compose -f dev/docker-compose.yml pull
+```
 
 ### Start Scapig in Dev Environment
 ``
