@@ -10,6 +10,8 @@ services:
         published: 9010
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-scope:
     image: scapig/scapig-scope
@@ -18,6 +20,8 @@ services:
         published: 9011
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-application:
     image: scapig/scapig-application
@@ -26,6 +30,8 @@ services:
         published: 9012
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-delegated-authority:
     image: scapig/scapig-delegated-authority
@@ -34,6 +40,8 @@ services:
         published: 9013
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-requested-authority:
     image: scapig/scapig-requested-authority
@@ -42,6 +50,8 @@ services:
         published: 9014
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-oauth:
     image: scapig/scapig-oauth
@@ -51,7 +61,7 @@ services:
         protocol: tcp
         mode: host
     environment:
-      - configFile=production.conf
+      - JAVA_OPTS=-DconfigFile=production.conf
 
   scapig-developer:
     image: scapig/scapig-developer
@@ -60,6 +70,8 @@ services:
         published: 9016
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-developer-hub:
     image: scapig/scapig-developer-hub
@@ -68,6 +80,8 @@ services:
         published: 9020
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-gateway:
     image: scapig/scapig-gateway
@@ -76,6 +90,8 @@ services:
         published: 9018
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   scapig-publisher:
     image: scapig/scapig-publisher
@@ -84,6 +100,8 @@ services:
         published: 9019
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   api-example:
     image: scapig/api-example
@@ -92,6 +110,8 @@ services:
         published: 9021
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   lb-gateway:
     image: scapig/lb-gateway
@@ -100,6 +120,8 @@ services:
         published: 9030
         protocol: tcp
         mode: host
+    environment:
+      - JAVA_OPTS=
 
   login-example:
     image: scapig/login-example
@@ -109,7 +131,7 @@ services:
         protocol: tcp
         mode: host
     environment:
-      - configFile=production.conf
+      - JAVA_OPTS=-DconfigFile=production.conf
 
 volumes:
   logvolume01: {}

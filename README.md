@@ -54,5 +54,5 @@ docker stack deploy --compose-file docker-compose.yml scapig
 
 ### Start Web
 ``
-docker run -p9050:9050 -d -m128m scapig/web
+docker run -p9050:9050 -d scapig/web
 ``

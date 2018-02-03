@@ -7,66 +7,92 @@ services:
     build: $SCAPIG_REPOSITORY/scapig-api-definition
     ports:
      - "9010:9010"
+    environment:
+      - JAVA_OPTS=
 
   scapig-scope:
     build: $SCAPIG_REPOSITORY/scapig-scope
     ports:
      - "9011:9011"
+    environment:
+      - JAVA_OPTS=
 
   scapig-application:
     build: $SCAPIG_REPOSITORY/scapig-application
     ports:
      - "9012:9012"
+    environment:
+      - JAVA_OPTS=
 
   scapig-delegated-authority:
     build: $SCAPIG_REPOSITORY/scapig-delegated-authority
     ports:
      - "9013:9013"
+    environment:
+      - JAVA_OPTS=
 
   scapig-requested-authority:
     build: $SCAPIG_REPOSITORY/scapig-requested-authority
     ports:
      - "9014:9014"
+    environment:
+      - JAVA_OPTS=
 
   scapig-oauth:
     build: $SCAPIG_REPOSITORY/scapig-oauth
     ports:
      - "9015:9015"
+    environment:
+      - JAVA_OPTS=
 
   scapig-developer:
     build: $SCAPIG_REPOSITORY/scapig-developer
     ports:
      - "9016:9016"
+    environment:
+      - JAVA_OPTS=
 
   scapig-developer-hub:
     build: $SCAPIG_REPOSITORY/scapig-developer-hub
     ports:
      - "9020:9020"
+    environment:
+      - JAVA_OPTS=
 
   scapig-gateway:
     build: $SCAPIG_REPOSITORY/scapig-gateway
     ports:
      - "9018:9018"
+    environment:
+      - JAVA_OPTS=
 
   scapig-publisher:
     build: $SCAPIG_REPOSITORY/scapig-publisher
     ports:
      - "9019:9019"
+    environment:
+      - JAVA_OPTS=
 
   api-example:
     build: $SCAPIG_REPOSITORY/api-example
     ports:
      - "9021:9021"
+    environment:
+      - JAVA_OPTS=
 
   lb-gateway:
     build: $SCAPIG_REPOSITORY/scripts/nginx/lb-gateway
     ports:
      - "9030:9030"
+    environment:
+      - JAVA_OPTS=
 
   login-example:
     build: $SCAPIG_REPOSITORY/login-example
     ports:
      - "9040:9040"
+    environment:
+      - JAVA_OPTS=
 
 volumes:
   logvolume01: {}
