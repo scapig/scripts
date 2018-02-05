@@ -43,13 +43,13 @@ bin/stop.sh
 
 ### Pull the latest version
 ```
-docker-compose -f dev/docker-compose.yml pull
+docker-compose -f deploy/docker-compose.yml pull
 ```
 
 ### Start Scapig in Dev Environment
 ``
 docker swarm init
-docker stack deploy --compose-file deploy/dev-docker-compose.yml scapig
+docker stack deploy --compose-file deploy/docker-compose.yml scapig
 ``
 
 ### Start Scapig in Production Environment
