@@ -69,5 +69,5 @@ docker run -p9050:9050 -d scapig/web
 
 ### Backup Mongo
 ``
-docker run --network scapig-network -v /tmp/backup:/backup mongo bash -c 'mongodump --out /backup --host mongo:27017'
+docker run --network scapig-network -v /var/backup/scapig-mongo:/backup mongo bash -c 'mongodump --out /backup --host mongo:27017'
 ``
