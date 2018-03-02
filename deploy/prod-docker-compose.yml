@@ -1,7 +1,14 @@
 version: '3.4'
+networks:
+  scapig-network:
+    external:
+      name: scapig-network
+
 services:
   mongo:
     image: mongo
+    networks:
+      - scapig-network
 
   scapig-api-definition:
     image: scapig/scapig-api-definition
@@ -10,6 +17,8 @@ services:
         published: 9010
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -20,6 +29,8 @@ services:
         published: 9011
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -30,6 +41,8 @@ services:
         published: 9012
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -40,6 +53,8 @@ services:
         published: 9013
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -50,6 +65,8 @@ services:
         published: 9014
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -60,6 +77,8 @@ services:
         published: 9015
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=-DconfigFile=production.conf
 
@@ -70,6 +89,8 @@ services:
         published: 9016
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -80,6 +101,8 @@ services:
         published: 9020
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -90,6 +113,8 @@ services:
         published: 9018
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -100,6 +125,8 @@ services:
         published: 9019
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -110,6 +137,8 @@ services:
         published: 9021
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -120,6 +149,8 @@ services:
         published: 9030
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=
 
@@ -130,6 +161,8 @@ services:
         published: 9040
         protocol: tcp
         mode: host
+    networks:
+      - scapig-network
     environment:
       - JAVA_OPTS=-DconfigFile=production.conf
 

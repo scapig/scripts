@@ -47,13 +47,16 @@ docker-compose -f deploy/docker-compose.yml pull
 ```
 
 ### Start Scapig in Dev Environment
-``
+
+```
+docker network create -d overlay scapig-network
 docker swarm init
 docker stack deploy --compose-file deploy/docker-compose.yml scapig
-``
+```
 
 ### Start Scapig in Production Environment
 ``
+docker network create -d overlay --attachable scapig-network
 docker swarm init
 curl https://raw.githubusercontent.com/scapig/scripts/master/deploy/prod-docker-compose.yml --output docker-compose.yml
 docker stack deploy --compose-file docker-compose.yml scapig
@@ -62,4 +65,9 @@ docker stack deploy --compose-file docker-compose.yml scapig
 ### Start Web
 ``
 docker run -p9050:9050 -d scapig/web
+``
+
+### Backup Mongo
+``
+docker run --network scapig-network -v /tmp/backup:/backup mongo bash -c 'mongodump --out /backup --host mongo:27017'
 ``
